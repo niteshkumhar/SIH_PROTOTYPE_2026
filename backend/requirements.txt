@@ -4,3 +4,4 @@ pydantic
 numpy
 opencv-python-headless
 python-multipart
+shapely
