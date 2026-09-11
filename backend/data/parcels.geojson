@@ -1,0 +1,53 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "cadastral_parcel_1",
+        "source": "GeoAI_Drone_Segmentation"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.88418,
+              8.572195
+            ],
+            [
+              76.8841,
+              8.571786
+            ],
+            [
+              76.884062,
+              8.571526
+            ],
+            [
+              76.885269,
+              8.570964
+            ],
+            [
+              76.886154,
+              8.57247
+            ],
+            [
+              76.884459,
+              8.572189
+            ],
+            [
+              76.88418,
+              8.572195
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
