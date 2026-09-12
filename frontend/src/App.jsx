@@ -7,6 +7,8 @@ import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';
 import 'leaflet/dist/leaflet.css';
 import area from '@turf/area';
 
+const API_BASE_URL = 'https://terrabyte-api-q9xv.onrender.com';
+
 const { Overlay, BaseLayer } = LayersControl;
 
 // ==========================================
@@ -291,7 +293,7 @@ function GeomanControls({ setSyncStatus, fetchParcels }) {
 
     const saveParcelToBackend = async (geoJsonData, message) => {
       try {
-        const res = await fetch('http://127.0.0.1:8000/api/v1/parcels/update', {
+        const res = await fetch(`${API_BASE_URL}/api/v1/parcels/update`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(geoJsonData),
@@ -391,7 +393,7 @@ function Dashboard({ geoData, mapKey, fetchParcels, isDarkMode, setIsDarkMode })
     const formData = new FormData();
     formData.append('file', file);
 
-    fetch('http://127.0.0.1:8000/api/v1/process-drone-image', {
+    fetch(`${API_BASE_URL}/api/v1/process-drone-image`, {
       method: 'POST',
       body: formData,
     })
@@ -659,7 +661,7 @@ export default function App() {
 
   const fetchParcels = async () => {
     try {
-      const res = await fetch('http://127.0.0.1:8000/api/v1/parcels');
+      const res = await fetch(`${API_BASE_URL}/api/v1/parcels`);
       const data = await res.json();
       setGeoData(data);
       setMapKey(Date.now());
